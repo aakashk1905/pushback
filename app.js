@@ -46,7 +46,7 @@ app.get("/send-notification", (req, res) => {
   subDatabase.forEach((subscription) => {
     sendNotification(subscription, payload);
   });
-  res.json({ status: "Success", message: "Message sent to push service" });
+  res.json({ status: "Success", message: "Message sent to push service", subDatabase});
 });
 
 app.listen(port, () => {
